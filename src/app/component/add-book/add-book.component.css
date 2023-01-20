@@ -1,0 +1,23 @@
+.body{
+    background-color:  rgb(242, 246, 241);
+    height: 575px;
+    color: aliceblue;
+    font-weight: 600;
+    /* margin-left: 50px; */
+    padding-left: 450px;
+    padding-top: 100px;
+}
+
+
+.card{
+    padding-bottom: -100px;
+    padding: 40px;
+    /* object-fit: contain; */
+    border-radius: 20px;
+}
+
+.rs{
+    padding-left: 145px;
+    color: black;
+    height: 40px;
+  }

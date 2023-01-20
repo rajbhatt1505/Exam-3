@@ -1,0 +1,78 @@
+<div class="body">
+  <div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-5  animate__animated animate__bounce">
+                    <div class="rs">
+                        <h3>Register Here!</h3>
+                    </div>
+                    <div class="raj">
+                      <a routerLink="">Already register!!</a>
+                  </div>
+                    <hr>
+  
+                    <form [formGroup]="registerform" class="text-left"  (submit)="register()">
+  
+  
+                      <div class="form-group">
+                        <label class="">UserName</label>
+                        <input  type="text" class="form-control" placeholder="UserName" id="username"
+                            formControlName="username" required>
+                            <span class="text text-danger" *ngIf="(username && username.invalid) &&( username.touched || issubmit) ">enter username</span>
+                    </div>
+  
+  
+  
+                        <div class="form-group">
+                          <label class="">name</label>
+                        <input  type="text" class="form-control" placeholder="name" id="name"
+                            formControlName="name">
+                        <span class="text text-danger" *ngIf="(name && name.invalid) &&( name.touched || issubmit) ">enter name</span>
+  
+                        </div>
+  
+  
+                      <div class="form-group">
+                        <label class="">email</label>
+                        <input  type="text" class="form-control" placeholder="email" id="email"
+                            formControlName="email">
+                            <span class="text text-danger" *ngIf="(email && email.invalid) && (email.touched || issubmit) ">Enter valid emailId</span>
+                    </div>
+  
+                    
+  
+  
+                    <div class="form-group">
+                      <label class="">mobile</label>
+                      <input  (keypress)="OnlyNumbersAllowed($event)" type="number" class="form-control" placeholder="mobile" id="mobile"
+                          formControlName="mobile">
+                          <span class="text text-danger" *ngIf="(mobile && mobile.invalid) && (mobile?.touched || issubmit) ">Enter Number
+                            required</span>
+                  </div>
+  
+  
+  
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input  type="password" class="form-control" placeholder="Password" id="password"
+                              formControlName="password" >
+                              <span class="text text-danger" *ngIf="(password && password.invalid) && (password.touched || issubmit) ">Enter Valid Password
+                                password</span>
+                        </div>&nbsp;
+
+  
+                        <div class="rb">
+                            <button class="btn btn-outline-primary btn-block" >Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
