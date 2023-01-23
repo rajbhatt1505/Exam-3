@@ -56,6 +56,11 @@ export class UserComponent implements OnInit {
 
       
     }
+    if(this.auth.getToken()){
+      this.router.navigate(['main/home']);
+    }else{
+      this.router.navigate([''])
+    }
   }
 
   get Profile() {

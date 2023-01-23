@@ -1,1 +1,76 @@
-<p>profile works!</p>
+<div class="body">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-5 mt-5 mb-5 ">
+
+                    <div class="rs">
+                        <h1>Profile</h1>
+                        
+                        <div [ngClass]="" role="alert">
+                            {{message}}
+                            <!-- <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login Here</a> -->
+                        </div>
+                    </div>&nbsp;
+                    <form [formGroup]=getProfile (ngSubmit)="Onsumit()" class="text-left">
+                        <div class="flex">
+                       
+                        </div><br>
+                        <div class="form-group">
+                            <label> UserName</label>
+                            <input type="text" class="form-control" placeholder="UserName"
+                                formControlName="username">
+                                <span class="text text-danger" *ngIf="(username && username.invalid) &&( username.touched || issubmit) ">enter username</span>
+
+                        </div>
+                        <div class="form-group">
+                            <label> Name</label>
+                            <input type="text" class="form-control" placeholder="UserName" formControlName="name">
+                        </div>
+                        <span class="text text-danger" *ngIf="(name && name.invalid) &&( name.touched || issubmit) ">enter name</span>
+
+                        <div class="form-group">
+
+                            <label>Email </label>
+                            <input type="email" class="form-control" placeholder="Email id Here"
+                                formControlName="email">
+                        </div>
+                        <span class="text text-danger" *ngIf="(email && email.invalid) && (email.touched || issubmit) ">Enter valid emailId</span>
+
+                        <div class="form-group">
+
+                            <label>Mobile</label>
+                            <input type="number" class="form-control" placeholder="Enter Number" formControlName="mobile">
+                        </div>
+                        <span class="text text-danger" *ngIf="(mobile && mobile.invalid) && (mobile?.touched || issubmit) ">Enter Number
+                            required</span>
+                        <div class="form-group">
+
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="*********"
+                                formControlName="password">
+                                <span class="text text-danger" *ngIf="(password && password.invalid) && (password.touched || issubmit) ">Enter Valid Password
+                                    password</span>
+                        </div>&nbsp;
+                        <!-- <div>
+                            <label id="l1" for="profile"> </label>
+                            <input formControlName="image_file" id="profile" (change)="fileChangeEvent($event)"
+                                type="File" accept="image/*">
+                        </div> -->
+                        <br>
+                        <div class="rb">
+                            <button class="btn btn-outline-success btn-block">Update
+                            </button>&nbsp;
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

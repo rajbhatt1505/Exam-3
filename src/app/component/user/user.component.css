@@ -11,7 +11,7 @@
   }
   
   .body{
-      height: 623px;
+      height: 575px;
       margin: auto;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       overflow: auto;
@@ -90,4 +90,6 @@
     /* padding: 7px; */
   }
   
-  
+  /* .form-group{
+    background-color: aliceblue;
+  } */

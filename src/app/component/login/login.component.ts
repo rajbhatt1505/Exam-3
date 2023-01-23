@@ -39,13 +39,15 @@ export class LoginComponent implements OnInit {
       if(res.success == true){
       alert('Login successfull!!')
         localStorage.setItem('token', res.token)
-        this.router.navigate(['/main'])
+        this.router.navigate(['/main/profile'])
       }else{
       alert(res. message)
       }
     },err=>{
       alert("Login faild !!")
     })
+
+ 
   }
 }
 

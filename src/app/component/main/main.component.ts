@@ -15,5 +15,7 @@ export class MainComponent implements OnInit {
   onLogout(){  
     this.auth.logout();  
   }  
+     
+  
 
 }

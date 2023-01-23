@@ -16,7 +16,10 @@ export class AuthService {
   httpHeaders = new HttpHeaders().set('Content-Type','application/json')
 
   constructor(private httpClient:HttpClient,private router:Router) { }
-
+  
+  get isUserLoggedIN(){
+    return false;
+  }
 
 
 
@@ -26,9 +29,10 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem('token');
+    
     this.router.navigate(['']);
   }
-  getToken():string | null{
+  getToken(){
     return localStorage.getItem('token');
   }
 
@@ -38,35 +42,27 @@ export class AuthService {
   signin(data:any):Observable<any>{
     return this.httpClient.post('http://localhost:8080/auth/login',data);
   }
-  user():Observable<any>{
+
+  getProfile():Observable<any>{
     const headers ={
       'Authorization':"Bearer" + localStorage.getItem('token')
     }
-    return this.httpClient.get('http://localhost:8080/auth/profile',{headers:headers})
+    return this.httpClient.get('http://localhost:8080/auth/profile',{withCredentials:true})
+  }
+  get(){
+    return this.httpClient.get('http://localhost:8080/auth/get',{withCredentials:true})
   }
 
-  // adduser(data:any):Observable<any>{
-  //   return this.http.post('http://localhost:8080/auth/add-user',data,{withCredentials:true})
-  // }
-  // get(){
-  //   return this.http.get('http://localhost:8080/auth/get',)
-  // }
-  // read(id: any): Observable<any> {
-  //   let API_URL = `${this.REST_API}/read-book/${id}`;
-  //   return this.http.get(API_URL, { headers: this.httpHeaders }).pipe(map((res: any) => {
-  //     return res || {}
-  //   }),
-  //     catchError(this.handleError)
-  //   )
-  // }
-
-  // del(data:any){
-  //   return this.http.delete("http://localhost:8080/auth/delete-user/"+data)
-  //  }
-  //  update(data:any,id:any){
-  //   return this.http.put("http://localhost:8080/auth/update-user/"+id,data)
-  //  }
-
+  profile(data:any){
+   return this.httpClient.post("http://localhost:8080/auth/Profileget",data)
+  }
+  
+  del(data:any){
+   return this.httpClient.delete("http://localhost:8080/auth/delete/"+data)
+  }
+  update(data:any,id:any){
+   return this.httpClient.patch("http://localhost:8080/auth/update/"+id,data)
+  }
 
   adduser(data:user):Observable<any> {
     let API_URL = `${this.REST_API}/add-user`;

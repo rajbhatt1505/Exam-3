@@ -8,7 +8,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { MainComponent } from './component/main/main.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './component/user/user.component';
@@ -17,7 +17,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { UserupdateComponent } from './component/userupdate/userupdate.component';
-
+import { HomeComponent } from './component/home/home.component';
+import { TokenService } from './service/token.service';
+import { AuthService } from './service/auth.service';
+import { IntercepterService } from './service/intercepter.service';
+import { AuthGuard } from './service/auth.guard';
+import { AudioComponent } from './component/audio/audio.component';
+import { AudiodataComponent } from './component/audiodata/audiodata.component';
+import { AudioupdateComponent } from './component/audioupdate/audioupdate.component';
 
 
 @NgModule({
@@ -30,6 +37,11 @@ import { UserupdateComponent } from './component/userupdate/userupdate.component
     UserComponent,
     UserdataComponent,
     UserupdateComponent,
+    HomeComponent,
+    AudioComponent,
+    AudiodataComponent,
+    AudioupdateComponent,
+
 
   ],
   imports: [
@@ -41,12 +53,15 @@ import { UserupdateComponent } from './component/userupdate/userupdate.component
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    
   
     
 
   ],
-  providers: [CookieService],
+  providers: [CookieService,TokenService,
+    AuthService,AuthGuard
+  ],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }
