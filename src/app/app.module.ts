@@ -17,9 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { UserupdateComponent } from './component/userupdate/userupdate.component';
-import { AddBookComponent } from './component/add-book/add-book.component';
-import { BookDetailComponent } from './component/book-detail/book-detail.component';
-import { BooksListComponent } from './component/books-list/books-list.component';
+
 
 
 @NgModule({
@@ -32,9 +30,7 @@ import { BooksListComponent } from './component/books-list/books-list.component'
     UserComponent,
     UserdataComponent,
     UserupdateComponent,
-    AddBookComponent,
-    BookDetailComponent,
-    BooksListComponent,
+
   ],
   imports: [
     BrowserModule,

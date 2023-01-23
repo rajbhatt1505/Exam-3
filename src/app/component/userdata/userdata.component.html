@@ -7,6 +7,7 @@
             <thead>
             <tr>
               <th >Sno.</th>
+              <th   scope="col" >Id</th>
               <th   scope="col" >firstname</th>
               <th   scope="col" >last</th>
               <th   scope="col" >gender</th>
@@ -20,13 +21,14 @@
           <tbody>
             <tr>
               <th   scope="col">{{(i+1)}}</th>
+              <th scope="col">{{data._id}}</th>
               <th  scope="col">{{data.firstname}}</th>
               <th  scope="col">{{data.lastname}}</th>
               <th   scope="col">{{data.gender}}</th>
               <th  scope="col">{{data.age}}</th>
               <th  scope="col">{{data.address}}</th>
 
-              <td><button mat-button mat-icon-button color="edit" routerLink="/main/userupdate" > <mat-icon>edit</mat-icon></button></td>         
+              <td><button mat-button mat-icon-button color="edit" routerLink="/main/userupdate/{{data._id}}" > <mat-icon>edit</mat-icon></button></td>         
               <td><button mat-button mat-icon-button color="warn" (click)="del(data._id,1)"  > <mat-icon>delete</mat-icon></button></td>  
             </tr>       
           </tbody>

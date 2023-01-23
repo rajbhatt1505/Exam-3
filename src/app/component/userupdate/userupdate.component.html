@@ -13,14 +13,14 @@
 
                         <hr>
 
-                        <form [formGroup]="myform" class="text-left" (ngSubmit)="Onsubmit()">
+                        <form class="text-left" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
 
 
                             <div class="form-group">
                                 <label class="">FirstName</label>
                                 <input type="text" class="form-control" placeholder="firstname" id="firstname"
                                     formControlName="firstname" required>
-                                    <!-- <span class="text text-danger" *ngIf="(firstname && firstname.invalid) &&( firstname.touched || issubmit) ">Required*</span> -->
+                                    <span class="text text-danger" *ngIf="(firstname && firstname.invalid) &&( firstname.touched || issubmit) ">Required*</span>
 
                             </div>
 
@@ -29,8 +29,8 @@
                             <div class="form-group">
                                 <label class="">LastName</label>
                                 <input type="text" class="form-control" placeholder="lastname" id="lastname"
-                                    formControlName="lastname">
-                                    <!-- <span class="text text-danger" *ngIf="(lastname && lastname.invalid) &&( lastname.touched || issubmit) ">Required*</span> -->
+                                    formControlName="lastname" >
+                                    <span class="text text-danger" *ngIf="(lastname && lastname.invalid) &&( lastname.touched || issubmit) ">Required*</span>
                             </div>
 
 
@@ -46,7 +46,7 @@
                                         formControlName="gender">
                                     <label class="form-check-label" for="male">Female</label>
                                 </div>
-                                <!-- <span class="text text-danger" *ngIf="(gender && gender.invalid) &&( gender.touched || issubmit) ">Required*</span> -->
+                                <span class="text text-danger" *ngIf="(gender && gender.invalid) &&( gender.touched || issubmit) ">Required*</span>
 
                             </div>
 
@@ -57,7 +57,7 @@
                                 <label class="">Age</label>
                                 <input (keypress)="OnlyNumbersAllowed($event)" type="text" class="form-control"
                                     placeholder="age" id="age" formControlName="age">
-                                    <!-- <span class="text text-danger" *ngIf="(age && age.invalid) &&( age.touched || issubmit) ">Required*</span> -->
+                                    <span class="text text-danger" *ngIf="(age && age.invalid) &&( age.touched || issubmit) ">Required*</span>
 
                             </div>
 
@@ -67,7 +67,7 @@
                                 <label>Address</label>
                                 <input type="address" class="form-control" placeholder="address" id="address"
                                     formControlName="address">
-                                    <!-- <span class="text text-danger" *ngIf="(address && address.invalid) &&( address.touched || issubmit) ">Required*</span> -->
+                                    <span class="text text-danger" *ngIf="(address && address.invalid) &&( address.touched || issubmit) ">Required*</span>
 
                             </div>&nbsp;
 

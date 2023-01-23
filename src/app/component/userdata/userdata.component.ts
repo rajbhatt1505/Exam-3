@@ -13,7 +13,7 @@ export class UserdataComponent implements OnInit {
   constructor( private auth:AuthService, private router:Router) { }
 
   ngOnInit(): void {
-    this.auth.get().subscribe((res)=>{
+    this.auth.getUsers().subscribe((res)=>{
 this.data=res
 console.log(this.data);
 
@@ -22,7 +22,7 @@ console.log(this.data);
   del(id: any, i: any) {
     console.log(id);
     if (window.confirm('Are You Sure want to Delete It')) {
-      this.auth.del(id).subscribe(res => {
+      this.auth.deleteUser(id).subscribe(res => {
         this.data.splice(i, 1);
       })
     }
