@@ -1,1 +1,67 @@
-<p>audioupdate works!</p>
+<div class="body">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card  animate__animated animate__bounce">
+                        <div class="rs">
+                            <h3>Update Song</h3>
+                        </div>
+
+                        <!-- <hr> -->
+
+                        <form [formGroup]="updateForm" class="text-left" (submit)="audio()"  >
+
+
+                            <div class="form-group">
+                                <label class="">Name</label>
+                                <input type="text" class="form-control" placeholder="Song Name" id="name"
+                                    formControlName="name" required>
+                                <!-- <span class="text text-danger" *ngIf="(name && name.invalid) &&( name.touched || issubmit) ">Required*</span> -->
+
+                            </div>&nbsp;
+
+
+
+                            <div class="form-group">
+                                <label id="l1" for="profile">Audio Image </label><br>
+                                <input formControlName="file" id="profile" (change)="onFileChange($event)"name="avatar"
+                                    type="File" accept="image/*">
+                            </div>&nbsp;
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="">Description</label>
+                                <input type="text" class="form-control" placeholder="Describe About the song"name="avatar"
+                                    id="description" formControlName="description" >
+                                <!-- <span class="text text-danger" *ngIf="(description && description.invalid) &&( description.touched || issubmit) ">Required*</span> -->
+
+                            </div>&nbsp;
+
+
+
+                            <div class="form-group">
+                                <label id="l1" for="profile">Audio File </label><br>
+                                <input formControlName="song"  (change)="onFileChange($event)" id="profile" type="File">
+                            </div>&nbsp;
+
+
+
+                            <div class="rb">
+                                <button class="btn btn-outline-primary btn-block">Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

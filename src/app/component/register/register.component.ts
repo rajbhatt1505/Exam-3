@@ -53,7 +53,9 @@ export class RegisterComponent implements OnInit {
        if(data.success == true){
         console.log(data);
         
-        alert('successfull')
+        alert('Register Done Successfully')
+        this.router.navigate([''])
+        // this.registerform.reset()
        }else{
         alert('failed')
        }

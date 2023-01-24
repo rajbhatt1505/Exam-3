@@ -1,0 +1,25 @@
+form-group{
+    color: black;
+    font-weight: bolder;
+    font-style:italic;
+    margin-top: 80px;
+  }
+  .card{
+    margin-top: 70px;
+    padding: 30px;
+    border-radius: 30px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .rs{
+    padding-left: 185px;
+    color: black;
+    height: 30px;
+    font-style: bold;
+    font-weight: 800;
+    text-decoration: underline;
+  }
+  .body{
+   height: 575px;
+    background-image: url('https://images.unsplash.com/photo-1484876065684-b683cf17d276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bGl2ZSUyMG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  }

@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { catchError, from, map, Observable,throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import {user} from './user'
+import { identifierName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class AuthService {
   isLoggedIn = true;
 
   REST_API: string = "http://localhost:8080/auth";
+  API: string = "http://localhost:8080/auth/audioget";
+
   httpHeaders = new HttpHeaders().set('Content-Type','application/json')
 
   constructor(private httpClient:HttpClient,private router:Router) { }
@@ -95,8 +98,29 @@ export class AuthService {
       catchError(this.handleError)
     )
   }
+// audio 
+audio(data:any):Observable<any>{
+  return this.httpClient.post('http://localhost:8080/auth/audio',data,{withCredentials:true});
+}
 
+readaudio(){
+  return this.httpClient.get(this.API)
+}
+getaudio(id: any): Observable<any> {
+  let API_URL = `${this.REST_API}/read-audio/${id}`;
+  return this.httpClient.get(API_URL, { headers: this.httpHeaders }).pipe(map((res: any) => {
+    return res || {}
+  }),
+    catchError(this.handleError)
+  )
+}
+delaudio(data:any){
+  return this.httpClient.delete("http://localhost:8080/auth/delete-audio/"+data)
+ }
 
+ updateaudio(data:any,id:any){
+  return this.httpClient.put("http://localhost:8080/auth/update-audio/"+id,data)
+ }
    handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
