@@ -8,16 +8,16 @@ import { AuthService } from 'src/app/service/auth.service'
   styleUrls: ['./audiodata.component.css']
 })
 export class AudiodataComponent implements OnInit {
-  data:any = [];
+  data: any = [];
 
-  constructor(private auth:AuthService, private router:Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.auth.readaudio().subscribe((res)=>{
-      this.data=res
+    this.auth.readaudio().subscribe((res) => {
+      this.data = res
       console.log(this.data);
-      
-          })
+
+    })
   }
   del(id: any, i: any) {
     console.log(id);

@@ -69,7 +69,7 @@ this.ChangeEvt=file
    get description(){
     return this.updateForm.get('description')
    }
-  //  get file(){
-  //    return this.updateForm.get('file')
-  //  }
+   get file(){
+     return this.updateForm.get('file')
+   }
 }
