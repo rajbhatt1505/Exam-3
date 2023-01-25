@@ -22,7 +22,7 @@ export class AudiodataComponent implements OnInit {
   del(id: any, i: any) {
     console.log(id);
     if (window.confirm('Are You Sure want to Delete It')) {
-      this.auth.deleteUser(id).subscribe(res => {
+      this.auth.delaudio(id).subscribe(res => {
         this.data.splice(i, 1);
       })
     }

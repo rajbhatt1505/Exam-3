@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
       return false;
     }
     return true;
-
   }
 
   constructor(private router: Router, private auth: AuthService) {

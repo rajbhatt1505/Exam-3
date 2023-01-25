@@ -27,7 +27,7 @@ console.log(this.data);
       })
     }
     if(this.auth.getToken()){
-      this.router.navigate(['main/home']);
+      // this.router.navigate(['main/home']);
     }else{
       this.router.navigate([''])
     }

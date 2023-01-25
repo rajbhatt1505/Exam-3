@@ -114,9 +114,12 @@ getaudio(id: any): Observable<any> {
     catchError(this.handleError)
   )
 }
-delaudio(data:any){
-  return this.httpClient.delete("http://localhost:8080/auth/delete-audio/"+data)
- }
+  delaudio(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-audio/${id}`;
+    return this.httpClient.delete(API_URL, { headers: this.httpHeaders }).pipe(
+      catchError(this.handleError)
+    )
+  }
 
  updateaudio(data:any,id:any){
   return this.httpClient.put("http://localhost:8080/auth/update-audio/"+id,data)
