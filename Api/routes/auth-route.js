@@ -333,7 +333,7 @@ router.post('/audio', upload, (req, res) => {
                         res.status(401).json({ success: false, message: 'Required minimum digits 3 of name' });
                     } else if (err.errors.description) {
                         res.status(401).json({ success: false, message: 'Required minimum digits 3 of description' });
-                    } else if (err.errors.audioimage) {
+                    } else if (err.errors.audioplayer) {
                         res.status(401).json({ success: false, message: 'Required ' });
                     } else { res.status(400).json({ success: false, message: err.message }); }
                 } else {
@@ -385,7 +385,7 @@ router.delete('/delete-audio/:id', (req, res, next) => {
         audio.findOne({ _id: req.params.id }, function (err, data) {
             if (err) throw err;
             if (!data) {
-                res.status(200).json({ success: false, message: 'No book found' });
+                res.status(200).json({ success: false, message: 'No Audio found' });
             }
             else if (!req.file) {
                 data.name = req.body.name;
@@ -411,7 +411,7 @@ router.delete('/delete-audio/:id', (req, res, next) => {
 
             }
             else {
-                // fs.unlinkSync(`uploads/${data.file}`);
+                fs.unlinkSync(`uploads/${data.file}`);
                 console.log(data.file);
                 data.name = req.body.name;
                 data.description = req.body.description;
