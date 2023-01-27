@@ -390,8 +390,7 @@ router.delete('/delete-audio/:id', (req, res, next) => {
             else if (!req.file) {
                 data.name = req.body.name;
                 data.description = req.body.description;
-                // data.quantities = req.body.quantities;
-                // data.price = req.body.price;
+                data.audioplayer_path =req.body.audioplayer_path
                 data.save(
                     function (err) {
                         if (err) {
@@ -412,12 +411,12 @@ router.delete('/delete-audio/:id', (req, res, next) => {
 
             }
             else {
-                fs.unlinkSync(`./uploads/${data.file}`);
+                // fs.unlinkSync(`uploads/${data.file}`);
                 console.log(data.file);
                 data.name = req.body.name;
                 data.description = req.body.description;
-                data.audioimage= req.body.audioimage
-                data.audioimage_path = 'http://localhost:8080/' + req.file.audioimage;
+                data.audioplayer= req.body.filename
+                data.audioplayer_path = 'http://localhost:8080/' + req.file.filename;
               
                 data.save(function (err) {
                     if (err) {

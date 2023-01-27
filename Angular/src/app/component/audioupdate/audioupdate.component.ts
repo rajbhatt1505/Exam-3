@@ -21,9 +21,7 @@ export class AudioupdateComponent implements OnInit {
          name:res['name'],
          description:res['description'],
         //  file:res['file'],
-        //  song:res['song'],
-   
-   
+        //  song:res['song']
        })
       });
       this.updateForm = new FormGroup({
@@ -37,7 +35,7 @@ export class AudioupdateComponent implements OnInit {
   ngOnInit(): void {
   }
   audio(){
-    this.auth.updateaudio(this.getId,this.updateForm.value).subscribe(res=>{
+    this.auth.audioupdate(this.getId,this.updateForm.value).subscribe(res=>{
       console.log("Data Update Successfully");
       this.router.navigate(['/main/audiodata'])
     })
@@ -60,7 +58,7 @@ this.ChangeEvt=file
   }
   _handleReaderLoaded(readerEvt:any) {
     var binaryString = readerEvt.target.result;
-           this.base64img='data:image/png;base64,'+ btoa(binaryString);
+           this.base64img='data:audio/mp3;base64,'+ btoa(binaryString);
            console.log(this.base64img);
    }
    get name(){

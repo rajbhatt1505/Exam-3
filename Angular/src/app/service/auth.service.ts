@@ -121,9 +121,12 @@ getaudio(id: any): Observable<any> {
     )
   }
 
- updateaudio(data:any,id:any){
-  return this.httpClient.put("http://localhost:8080/auth/update-audio/"+id,data)
- }
+  audioupdate(id: any, data: any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-user/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders }).pipe(
+      catchError(this.handleError)
+    )
+  }
    handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
