@@ -30,7 +30,7 @@
                                 <label id="l1" for="profile">Audio  </label><br>
                                 <input formControlName="file" id="profile" (change)="onFileChange($event)"name="avatar"
                                     type="File" accept="audio/*">
-                                    <span class="text text-danger" *ngIf="(file && file.invalid) &&( file.touched || issubmit) ">Required*</span>
+                                    <!-- <span class="text text-danger" *ngIf="(file && file.invalid) &&( file.touched || issubmit) ">Required*</span> -->
 
                             </div>&nbsp;
 
@@ -43,7 +43,7 @@
                                 <label class="">Description</label>
                                 <input type="text" class="form-control" placeholder="Describe About the song"name="avatar"
                                     id="description" formControlName="description" >
-                                <!-- <span class="text text-danger" *ngIf="(description && description.invalid) &&( description.touched || issubmit) ">Required*</span> -->
+                                <span class="text text-danger" *ngIf="(description && description.invalid) &&( description.touched || issubmit) ">Required*</span>
 
                             </div>&nbsp;
 

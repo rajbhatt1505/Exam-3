@@ -411,7 +411,7 @@ router.delete('/delete-audio/:id', (req, res, next) => {
 
             }
             else {
-                fs.unlinkSync(`uploads/${data.file}`);
+                // fs.unlinkSync(`uploads/${data.file}`);
                 console.log(data.file);
                 data.name = req.body.name;
                 data.description = req.body.description;

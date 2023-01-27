@@ -1,25 +1,33 @@
 form-group{
     color: black;
-    font-weight: bolder;
-    font-style:italic;
+    font-weight:bolder;
+    font-style: bold;
     margin-top: 80px;
+    
   }
   .card{
-    margin-top: 70px;
+    margin-top: 90px;
     padding: 30px;
     border-radius: 30px;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+    /* color: rgb(87, 40, 18);  */
+    /* font-family: 'Courier New', Courier, monospace; */
+    opacity: 0.9;
+    color: rgb(161, 130, 117);
+    font-weight:bolder;
+    font-style: bold;
+    background-color: rgb(13, 52, 82);
   }
   .rs{
     padding-left: 185px;
-    color: black;
+    /* text-decoration-color: black; */
+    color: rgb(161, 130, 117);
     height: 30px;
     font-style: bold;
-    font-weight: 800;
+    font-weight: 900;
     text-decoration: underline;
   }
   .body{
    height: 575px;
-    background-image: url('https://images.unsplash.com/photo-1484876065684-b683cf17d276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bGl2ZSUyMG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+   
+    background-image: url('https://thumbs.dreamstime.com/b/live-music-instruments-rehearsal-studio-48135358.jpg');
   }

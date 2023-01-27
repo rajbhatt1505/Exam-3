@@ -1,28 +1,28 @@
 <div class="grid">
   <div class="col-12">
-    <div class="card">
+    <div class="card" >
       <!-- <button mat-button routerLink="/profile"  style="width: 150px;" color="primary">Add new profile</button>  -->
       <mat-divider></mat-divider><br>
       <table class="table">
         <thead>
           <tr>
             <th>Sno.</th>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Audio</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th class="col" scope="col">Id</th>
+            <th class="col" scope="col">Name</th>
+            <th class="col" scope="col">Description</th>
+            <th class="col" scope="col" style="padding-left: 120px;">Audio</th>
+            <th class="col" scope="col">Edit</th>
+            <th class="col" scope="col">Delete</th>
           </tr>
         </thead>
         <ng-container *ngFor="let data of data;let i=index">
           <tbody>
             <tr>
-              <th scope="col">{{(i+1)}}</th>
-              <th scope="col">{{data._id}}</th>
-              <th scope="col">{{data.name}}</th>
-              <th scope="col">{{data.description}}</th>
-              <th  scope="col"><audio controls style="width: 250px;">
+              <th class="col" scope="col">{{(i+1)}}</th>
+              <th class="col" scope="col">{{data._id}}</th>
+              <th class="col" scope="col">{{data.name}}</th>
+              <th class="col" scope="col">{{data.description}}</th>
+              <th class="col"  scope="col"><audio controls style="width: 250px;">
                 <source [src]="data.audioplayer_path" type="audio/mpeg" >
               </audio></th>
 

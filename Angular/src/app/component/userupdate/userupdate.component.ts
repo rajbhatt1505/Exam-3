@@ -61,11 +61,11 @@ export class UserupdateComponent implements OnInit {
       console.log("Data Update Successfully");
       this.router.navigate(['/main/userdata'])
     })
-    if(this.auth.getToken()){
-      this.router.navigate(['main/home']);
-    }else{
-      this.router.navigate([''])
-    }
+    // if(this.auth.getToken()){
+    //   this.router.navigate(['main/home']);
+    // }else{
+    //   this.router.navigate([''])
+    // }
   }
   get firstname() {
     return this.updateForm.get('firstname')
