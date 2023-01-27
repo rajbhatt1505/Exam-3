@@ -82,7 +82,7 @@ this.ChangeEvt=file
   }
   _handleReaderLoaded(readerEvt:any) {
     var binaryString = readerEvt.target.result;
-           this.base64img='data:image/png;base64,'+ btoa(binaryString);
+           this.base64img='data:audio/mp3;base64,'+ btoa(binaryString);
            console.log(this.base64img);
    }
 

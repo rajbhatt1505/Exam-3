@@ -320,10 +320,10 @@ router.post('/audio', upload, (req, res) => {
     audio.name = req.body.name;
     audio.description = req.body.description;
     if (req.file) {
-        audio.audioimage = req.file.filename;
-        audio.audioimage_path = 'http://localhost:8080/' + req.file.filename;
-        // audio.audioplayer = req.file.filename;
-        // audio.audioplayer_path = 'http://localhost:8080/' + req.file.filename;
+        // audio.audioimage = req.file.filename;
+        // audio.audioimage_path = 'http://localhost:8080/' + req.file.filename;
+        audio.audioplayer = req.file.filename;
+        audio.audioplayer_path = 'http://localhost:8080/' + req.file.filename;
     }
     audio.save(
         function (err) {

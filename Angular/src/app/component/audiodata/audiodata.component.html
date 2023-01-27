@@ -10,7 +10,7 @@
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
-            <th scope="col">Image</th>
+            <th scope="col">Audio</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -22,7 +22,9 @@
               <th scope="col">{{data._id}}</th>
               <th scope="col">{{data.name}}</th>
               <th scope="col">{{data.description}}</th>
-              <th  scope="col" ><img [src]="data.audioimage_path" alt="" style="height: 40px;"></th>
+              <th  scope="col"><audio controls style="width: 250px;">
+                <source [src]="data.audioplayer_path" type="audio/mpeg" >
+              </audio></th>
 
 
               <td><button mat-button mat-icon-button color="edit" routerLink="/main/audioupdate/{{data._id}}">

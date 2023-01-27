@@ -19,7 +19,6 @@ const path = require('path')
 app.use(cookieParser())
 app.use(express.json())
 mongoose.set('strictQuery', false)
-
 mongoose.connect('mongodb://localhost:27017/Exam-3', (err) => {
     if (err) {
         console.log("Database is Not Connected !");
@@ -27,6 +26,7 @@ mongoose.connect('mongodb://localhost:27017/Exam-3', (err) => {
         console.log("DataBase is Connected........");
     }
 });
+
 app.use(morgan('dev'));
 // app.use(express.static('./uploads'));
 app.use(express.static(path.join(__dirname, 'storage')));

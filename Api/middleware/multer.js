@@ -7,13 +7,13 @@ const uploadimage = multer({
           cb(null, 'uploads');
       },
       filename: function (req, file, cb) {
-          if (!file.originalname.match(/\.(png|jpg|jpeg|)$/)) {
+          if (!file.originalname.match(/\.(png|jpg|jpeg|mp3)$/)) {
               var err = new Error();
-              err.code = 'only png,jpg & jpeg image uploaded';
+              err.code = 'only png,jpg,mp3 & jpeg image uploaded';
               return cb(err.code);
           }
           else {
-              cb(null, file.fieldname + "-" + Date.now() + '.jpg')
+              cb(null, file.fieldname + "-" + Date.now() + '.mp3')
           }
       }
   })
